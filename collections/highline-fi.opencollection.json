@@ -1,0 +1,524 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Highline API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create Access Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/auth/token",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Access Token"
+        },
+        {
+          "info": {
+            "name": "Refresh Access Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/auth/refresh-token",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Refresh Access Token"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get A User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/users/:user-id",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get A User"
+        },
+        {
+          "info": {
+            "name": "Check User Eligibility",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/users/match",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check User Eligibility"
+        },
+        {
+          "info": {
+            "name": "Simulate a new user identity (sandbox)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/users/simulate-identity"
+          },
+          "docs": "Simulate a new user identity (sandbox)"
+        },
+        {
+          "info": {
+            "name": "Simulate Receiving Payroll Deposit (sandbox)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/users/:user-id/simulate-incoming-transfer",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Simulate Receiving Payroll Deposit (sandbox)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Companies",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get a Company",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/companies/:company-id",
+            "params": [
+              {
+                "name": "company-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Company"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Products",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Products",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/products"
+          },
+          "docs": "List Products"
+        },
+        {
+          "info": {
+            "name": "Get a Product",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/products/:product-id",
+            "params": [
+              {
+                "name": "product-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Product"
+        },
+        {
+          "info": {
+            "name": "Get Product Members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/products/:product-id/members",
+            "params": [
+              {
+                "name": "product-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Product Members"
+        },
+        {
+          "info": {
+            "name": "Simulate Settlement (sandbox)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/products/:product-id/simulate-settlement",
+            "params": [
+              {
+                "name": "product-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Simulate Settlement (sandbox)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Connections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/connections"
+          },
+          "docs": "List Connections"
+        },
+        {
+          "info": {
+            "name": "Get a Connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/connections/:connection-id",
+            "params": [
+              {
+                "name": "connection-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Connection"
+        },
+        {
+          "info": {
+            "name": "Remove a Connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.highline.co/connections/:connection-id",
+            "params": [
+              {
+                "name": "connection-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove a Connection"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Employments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Employments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/employments"
+          },
+          "docs": "List Employments"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Payment Requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Payment Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payment-requests"
+          },
+          "docs": "List Payment Requests"
+        },
+        {
+          "info": {
+            "name": "Get a Payment Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Payment Request"
+        },
+        {
+          "info": {
+            "name": "Update a Payment Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a Payment Request"
+        },
+        {
+          "info": {
+            "name": "Cancel a Payment Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a Payment Request"
+        },
+        {
+          "info": {
+            "name": "Create Payment Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/connections/:connection-id/payment-requests",
+            "params": [
+              {
+                "name": "connection-id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Payment Requests"
+        },
+        {
+          "info": {
+            "name": "Simulate Due Date (sandbox)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id/simulate-due-date",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Simulate Due Date (sandbox)"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payments"
+          },
+          "docs": "List Payments"
+        },
+        {
+          "info": {
+            "name": "Get a Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payments/:payment-id",
+            "params": [
+              {
+                "name": "payment-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Payment"
+        },
+        {
+          "info": {
+            "name": "List Payments for Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id/payments",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Payments for Request"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Settlements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Settlements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/settlements"
+          },
+          "docs": "List Settlements"
+        },
+        {
+          "info": {
+            "name": "Get a Settlement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/settlements/:settlement-id",
+            "params": [
+              {
+                "name": "settlement-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Settlement"
+        },
+        {
+          "info": {
+            "name": "Get Settlement Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/settlements/:settlement-id/report",
+            "params": [
+              {
+                "name": "settlement-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Settlement Report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
