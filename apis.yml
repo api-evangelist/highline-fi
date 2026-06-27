@@ -57,7 +57,7 @@ apis:
         url: https://highline.co/payroll/
       - type: PayrollAndHR
         url: https://highline.co/for-payroll-and-hr-providers/
-      - type: LLMsTxt
+      - type: LlmsText
         url: https://docs.highline.co/llms.txt
       - type: LinkedIn
         url: https://www.linkedin.com/company/highlineco/
@@ -112,7 +112,7 @@ common:
     url: https://highline.co/for-payroll-and-hr-providers/
   - type: Documentation
     url: https://docs.highline.co/
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://docs.highline.co/llms.txt
   - type: About
     url: https://highline.co/about/
