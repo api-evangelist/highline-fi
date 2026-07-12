@@ -104,6 +104,10 @@ apis:
       - type: Webhooks
         description: Signed webhooks for payment lifecycle events with verification mechanisms.
 common:
+  - type: DomainSecurity
+    url: security/highline-fi-domain-security.yml
+  - type: Authentication
+    url: authentication/highline-fi-authentication.yml
   - type: Website
     url: https://highline.co/
   - type: Payroll
@@ -124,6 +128,8 @@ common:
     url: https://www.linkedin.com/company/highlineco/
   - type: Crunchbase
     url: https://www.crunchbase.com/organization/HighlineCo
+  - url: https://highline.co/feed/
+    type: Blog
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
