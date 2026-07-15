@@ -104,6 +104,8 @@ apis:
       - type: Webhooks
         description: Signed webhooks for payment lifecycle events with verification mechanisms.
 common:
+  - type: AgenticAccess
+    url: agentic-access/highline-fi-agentic-access.yml
   - type: DomainSecurity
     url: security/highline-fi-domain-security.yml
   - type: Authentication
