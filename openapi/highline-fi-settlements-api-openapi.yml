@@ -1,0 +1,65 @@
+openapi: 3.1.0
+info:
+  title: Highline Auth Settlements API
+  description: 'Highline is a payment solution enabling direct paycheck deductions
+
+    (pay-by-paycheck). This OpenAPI definition is generated best-effort
+
+    from public docs at https://docs.highline.co/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Highline
+    url: https://docs.highline.co/
+servers:
+- url: https://api.highline.co
+  description: Production
+- url: https://api.sandbox.highline.co
+  description: Sandbox
+security:
+- bearerAuth: []
+tags:
+- name: Settlements
+paths:
+  /settlements:
+    get:
+      tags:
+      - Settlements
+      summary: List Settlements
+      responses:
+        '200':
+          description: OK
+  /settlements/{settlement-id}:
+    get:
+      tags:
+      - Settlements
+      summary: Get a Settlement
+      parameters:
+      - $ref: '#/components/parameters/SettlementId'
+      responses:
+        '200':
+          description: OK
+  /settlements/{settlement-id}/report:
+    get:
+      tags:
+      - Settlements
+      summary: Get Settlement Report
+      parameters:
+      - $ref: '#/components/parameters/SettlementId'
+      responses:
+        '200':
+          description: OK
+components:
+  parameters:
+    SettlementId:
+      name: settlement-id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

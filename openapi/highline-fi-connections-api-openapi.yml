@@ -1,0 +1,64 @@
+openapi: 3.1.0
+info:
+  title: Highline Auth Connections API
+  description: 'Highline is a payment solution enabling direct paycheck deductions
+
+    (pay-by-paycheck). This OpenAPI definition is generated best-effort
+
+    from public docs at https://docs.highline.co/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Highline
+    url: https://docs.highline.co/
+servers:
+- url: https://api.highline.co
+  description: Production
+- url: https://api.sandbox.highline.co
+  description: Sandbox
+security:
+- bearerAuth: []
+tags:
+- name: Connections
+paths:
+  /connections:
+    get:
+      tags:
+      - Connections
+      summary: List Connections
+      responses:
+        '200':
+          description: OK
+  /connections/{connection-id}:
+    get:
+      tags:
+      - Connections
+      summary: Get a Connection
+      parameters:
+      - $ref: '#/components/parameters/ConnectionId'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Connections
+      summary: Remove a Connection
+      parameters:
+      - $ref: '#/components/parameters/ConnectionId'
+      responses:
+        '204':
+          description: Removed
+components:
+  parameters:
+    ConnectionId:
+      name: connection-id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

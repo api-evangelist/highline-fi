@@ -1,0 +1,98 @@
+openapi: 3.1.0
+info:
+  title: Highline Auth API
+  description: 'Highline is a payment solution enabling direct paycheck deductions
+
+    (pay-by-paycheck). This OpenAPI definition is generated best-effort
+
+    from public docs at https://docs.highline.co/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Highline
+    url: https://docs.highline.co/
+servers:
+- url: https://api.highline.co
+  description: Production
+- url: https://api.sandbox.highline.co
+  description: Sandbox
+security:
+- bearerAuth: []
+tags:
+- name: Auth
+paths:
+  /auth/token:
+    post:
+      tags:
+      - Auth
+      summary: Create Access Token
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                client_id:
+                  type: string
+                client_secret:
+                  type: string
+                grant_type:
+                  type: string
+                  example: client_credentials
+              required:
+              - client_id
+              - client_secret
+              - grant_type
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+  /auth/refresh-token:
+    post:
+      tags:
+      - Auth
+      summary: Refresh Access Token
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                refresh_token:
+                  type: string
+              required:
+              - refresh_token
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Token'
+components:
+  schemas:
+    Token:
+      type: object
+      properties:
+        access_token:
+          type: string
+        token_type:
+          type: string
+          example: Bearer
+        expires_in:
+          type: integer
+        refresh_token:
+          type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

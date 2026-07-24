@@ -1,0 +1,69 @@
+openapi: 3.1.0
+info:
+  title: Highline Auth Payments API
+  description: 'Highline is a payment solution enabling direct paycheck deductions
+
+    (pay-by-paycheck). This OpenAPI definition is generated best-effort
+
+    from public docs at https://docs.highline.co/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Highline
+    url: https://docs.highline.co/
+servers:
+- url: https://api.highline.co
+  description: Production
+- url: https://api.sandbox.highline.co
+  description: Sandbox
+security:
+- bearerAuth: []
+tags:
+- name: Payments
+paths:
+  /payments:
+    get:
+      tags:
+      - Payments
+      summary: List Payments
+      responses:
+        '200':
+          description: OK
+  /payments/{payment-id}:
+    get:
+      tags:
+      - Payments
+      summary: Get a Payment
+      parameters:
+      - name: payment-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /payment-requests/{payment-request-id}/payments:
+    get:
+      tags:
+      - Payments
+      summary: List Payments for Request
+      parameters:
+      - $ref: '#/components/parameters/PaymentRequestId'
+      responses:
+        '200':
+          description: OK
+components:
+  parameters:
+    PaymentRequestId:
+      name: payment-request-id
+      in: path
+      required: true
+      schema:
+        type: string
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

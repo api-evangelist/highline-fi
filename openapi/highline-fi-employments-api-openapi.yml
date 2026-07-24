@@ -1,0 +1,38 @@
+openapi: 3.1.0
+info:
+  title: Highline Auth Employments API
+  description: 'Highline is a payment solution enabling direct paycheck deductions
+
+    (pay-by-paycheck). This OpenAPI definition is generated best-effort
+
+    from public docs at https://docs.highline.co/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Highline
+    url: https://docs.highline.co/
+servers:
+- url: https://api.highline.co
+  description: Production
+- url: https://api.sandbox.highline.co
+  description: Sandbox
+security:
+- bearerAuth: []
+tags:
+- name: Employments
+paths:
+  /employments:
+    get:
+      tags:
+      - Employments
+      summary: List Employments
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

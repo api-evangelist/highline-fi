@@ -1,0 +1,129 @@
+openapi: 3.1.0
+info:
+  title: Highline Auth Payment Requests API
+  description: 'Highline is a payment solution enabling direct paycheck deductions
+
+    (pay-by-paycheck). This OpenAPI definition is generated best-effort
+
+    from public docs at https://docs.highline.co/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Highline
+    url: https://docs.highline.co/
+servers:
+- url: https://api.highline.co
+  description: Production
+- url: https://api.sandbox.highline.co
+  description: Sandbox
+security:
+- bearerAuth: []
+tags:
+- name: Payment Requests
+paths:
+  /payment-requests:
+    get:
+      tags:
+      - Payment Requests
+      summary: List Payment Requests
+      responses:
+        '200':
+          description: OK
+  /payment-requests/{payment-request-id}:
+    get:
+      tags:
+      - Payment Requests
+      summary: Get a Payment Request
+      parameters:
+      - $ref: '#/components/parameters/PaymentRequestId'
+      responses:
+        '200':
+          description: OK
+    put:
+      tags:
+      - Payment Requests
+      summary: Update a Payment Request
+      parameters:
+      - $ref: '#/components/parameters/PaymentRequestId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentRequest'
+      responses:
+        '200':
+          description: OK
+    delete:
+      tags:
+      - Payment Requests
+      summary: Cancel a Payment Request
+      parameters:
+      - $ref: '#/components/parameters/PaymentRequestId'
+      responses:
+        '204':
+          description: Cancelled
+  /connections/{connection-id}/payment-requests:
+    post:
+      tags:
+      - Payment Requests
+      summary: Create Payment Requests
+      parameters:
+      - $ref: '#/components/parameters/ConnectionId'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PaymentRequest'
+      responses:
+        '201':
+          description: Created
+  /payment-requests/{payment-request-id}/simulate-due-date:
+    post:
+      tags:
+      - Payment Requests
+      summary: Simulate Due Date (sandbox)
+      parameters:
+      - $ref: '#/components/parameters/PaymentRequestId'
+      responses:
+        '200':
+          description: OK
+components:
+  parameters:
+    ConnectionId:
+      name: connection-id
+      in: path
+      required: true
+      schema:
+        type: string
+    PaymentRequestId:
+      name: payment-request-id
+      in: path
+      required: true
+      schema:
+        type: string
+  schemas:
+    PaymentRequest:
+      type: object
+      properties:
+        connection_id:
+          type: string
+        amount:
+          type: integer
+          description: Amount in cents
+        currency:
+          type: string
+          example: USD
+        start_date:
+          type: string
+          format: date
+        due_date:
+          type: string
+          format: date
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

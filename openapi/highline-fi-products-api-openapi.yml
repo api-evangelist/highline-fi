@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: Highline Auth Products API
+  description: 'Highline is a payment solution enabling direct paycheck deductions
+
+    (pay-by-paycheck). This OpenAPI definition is generated best-effort
+
+    from public docs at https://docs.highline.co/.
+
+    '
+  version: 1.0.0
+  contact:
+    name: Highline
+    url: https://docs.highline.co/
+servers:
+- url: https://api.highline.co
+  description: Production
+- url: https://api.sandbox.highline.co
+  description: Sandbox
+security:
+- bearerAuth: []
+tags:
+- name: Products
+paths:
+  /products:
+    get:
+      tags:
+      - Products
+      summary: List Products
+      responses:
+        '200':
+          description: OK
+  /products/{product-id}:
+    get:
+      tags:
+      - Products
+      summary: Get a Product
+      parameters:
+      - name: product-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /products/{product-id}/members:
+    get:
+      tags:
+      - Products
+      summary: Get Product Members
+      parameters:
+      - name: product-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+  /products/{product-id}/simulate-settlement:
+    post:
+      tags:
+      - Products
+      summary: Simulate Settlement (sandbox)
+      parameters:
+      - name: product-id
+        in: path
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
