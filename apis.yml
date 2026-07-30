@@ -12,9 +12,22 @@ description: |
   ACH settlements, and an llms.txt for AI agents. The company is sometimes
   referenced as highline.fi but operates today at highline.co.
 type: Index
+accessModel:
+  pricing: free
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Free · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Provider
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/highline-fi.png
 tags:
   - Embedded Finance
   - Payroll
@@ -31,78 +44,169 @@ created: '2026-05-23'
 modified: '2026-05-23'
 specificationVersion: '0.20'
 apis:
-  - aid: highline-fi:pay-by-paycheck-api
-    name: Highline Pay by Paycheck API
-    description: |
-      The Highline API lets billers, lenders, and platforms verify consumer
-      eligibility for paycheck-deduction payments, present the Highline Link
-      flow to authorize a connection, submit and manage payment requests, and
-      reconcile daily ACH settlements. It is documented at docs.highline.co
-      with API keys, webhooks, simulations, and an llms.txt index for AI
-      agents.
-    humanURL: https://docs.highline.co/
-    tags:
-      - Payments
-      - Eligibility
-      - Link
-      - Webhooks
-      - Settlements
-      - Reconciliation
-    properties:
-      - type: Documentation
-        url: https://docs.highline.co/
-      - type: Website
-        url: https://highline.co/
-      - type: Payroll
-        url: https://highline.co/payroll/
-      - type: PayrollAndHR
-        url: https://highline.co/for-payroll-and-hr-providers/
-      - type: LlmsText
-        url: https://docs.highline.co/llms.txt
-      - type: LinkedIn
-        url: https://www.linkedin.com/company/highlineco/
-    features:
-      - name: Eligibility API
-        description: Check whether a consumer qualifies for Pay by Paycheck based on payroll connections.
-      - name: Highline Link
-        description: Client-side widget for users to authorize a connection between their employer payroll and the biller or lender.
-      - name: Payment Requests
-        description: Submit, update, and cancel payment requests for upcoming paychecks.
-      - name: Payment Monitoring
-        description: Track status of in-flight payments in real time.
-      - name: Daily ACH Settlements
-        description: Receive funds via same-day or daily ACH batch transfers.
-      - name: Reconciliation Reports
-        description: Pull settlement reports for arbitrary date ranges.
-      - name: Webhooks
-        description: Subscribe to payment lifecycle events with signed webhook verification.
-      - name: Sandbox Simulations
-        description: Test integration flows end-to-end against a sandbox environment.
-      - name: llms.txt for AI Agents
-        description: Markdown-formatted page index and OpenAPI endpoints exposed at docs.highline.co/llms.txt.
-    useCases:
-      - name: Lender Loan Repayment
-        description: Lenders ensure on-time, in-full loan repayments by collecting from paychecks before consumer checking accounts receive funds.
-      - name: Biller Recurring Payments
-        description: Billers reduce churn by routing recurring bills through paycheck deductions.
-      - name: Payroll Platform Partnership
-        description: Payroll providers offer Highline as a partner capability to their employer customers.
-      - name: Embedded Consumer Apps
-        description: Consumer fintech apps embed Pay by Paycheck for automated bill management.
-      - name: Hardship Programs
-        description: Lenders and billers offer paycheck-aligned hardship programs to consumers.
-    integrations:
-      - name: ACH network
-      - name: Payroll providers
-      - name: Direct deposit systems
-      - name: Banking platforms
-      - name: Lending platforms
-      - name: Billing platforms
-    authentication:
-      - type: APIKey
-        description: API keys issued through the Highline dashboard, with sandbox and live environments.
-      - type: Webhooks
-        description: Signed webhooks for payment lifecycle events with verification mechanisms.
+- aid: highline-fi:pay-by-paycheck-api
+  name: Highline Pay by Paycheck API
+  description: >
+    The Highline API lets billers, lenders, and platforms verify consumer
+
+    eligibility for paycheck-deduction payments, present the Highline Link
+
+    flow to authorize a connection, submit and manage payment requests, and
+
+    reconcile daily ACH settlements. It is documented at docs.highline.co
+
+    with API keys, webhooks, simulations, and an llms.txt index for AI
+
+    agents.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Payments
+  - Eligibility
+  - Link
+  - Webhooks
+  - Settlements
+  - Reconciliation
+  properties:
+  - type: Documentation
+    url: https://docs.highline.co/
+  - type: Website
+    url: https://highline.co/
+  - type: Payroll
+    url: https://highline.co/payroll/
+  - type: PayrollAndHR
+    url: https://highline.co/for-payroll-and-hr-providers/
+  - type: LlmsText
+    url: https://docs.highline.co/llms.txt
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/highlineco/
+  features:
+  - name: Eligibility API
+    description: Check whether a consumer qualifies for Pay by Paycheck based on payroll connections.
+  - name: Highline Link
+    description: >-
+      Client-side widget for users to authorize a connection between their employer payroll and the biller
+      or lender.
+  - name: Payment Requests
+    description: Submit, update, and cancel payment requests for upcoming paychecks.
+  - name: Payment Monitoring
+    description: Track status of in-flight payments in real time.
+  - name: Daily ACH Settlements
+    description: Receive funds via same-day or daily ACH batch transfers.
+  - name: Reconciliation Reports
+    description: Pull settlement reports for arbitrary date ranges.
+  - name: Webhooks
+    description: Subscribe to payment lifecycle events with signed webhook verification.
+  - name: Sandbox Simulations
+    description: Test integration flows end-to-end against a sandbox environment.
+  - name: llms.txt for AI Agents
+    description: >-
+      Markdown-formatted page index and OpenAPI endpoints exposed at docs.highline.co/llms.txt.
+  useCases:
+  - name: Lender Loan Repayment
+    description: >-
+      Lenders ensure on-time, in-full loan repayments by collecting from paychecks before consumer checking
+      accounts receive funds.
+  - name: Biller Recurring Payments
+    description: Billers reduce churn by routing recurring bills through paycheck deductions.
+  - name: Payroll Platform Partnership
+    description: Payroll providers offer Highline as a partner capability to their employer customers.
+  - name: Embedded Consumer Apps
+    description: Consumer fintech apps embed Pay by Paycheck for automated bill management.
+  - name: Hardship Programs
+    description: Lenders and billers offer paycheck-aligned hardship programs to consumers.
+  integrations:
+  - name: ACH network
+  - name: Payroll providers
+  - name: Direct deposit systems
+  - name: Banking platforms
+  - name: Lending platforms
+  - name: Billing platforms
+  authentication:
+  - type: APIKey
+    description: API keys issued through the Highline dashboard, with sandbox and live environments.
+  - type: Webhooks
+    description: Signed webhooks for payment lifecycle events with verification mechanisms.
+- aid: highline-fi:highline-fi-auth-api
+  name: Highline Auth API
+  description: The Auth API from Highline — 2 operation(s) for auth.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/highline-fi-auth-api-openapi.yml
+- aid: highline-fi:highline-fi-companies-api
+  name: Highline Companies API
+  description: The Companies API from Highline — 1 operation(s) for companies.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Companies
+  properties:
+  - type: OpenAPI
+    url: openapi/highline-fi-companies-api-openapi.yml
+- aid: highline-fi:highline-fi-connections-api
+  name: Highline Connections API
+  description: The Connections API from Highline — 2 operation(s) for connections.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Connections
+  properties:
+  - type: OpenAPI
+    url: openapi/highline-fi-connections-api-openapi.yml
+- aid: highline-fi:highline-fi-employments-api
+  name: Highline Employments API
+  description: The Employments API from Highline — 1 operation(s) for employments.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Employments
+  properties:
+  - type: OpenAPI
+    url: openapi/highline-fi-employments-api-openapi.yml
+- aid: highline-fi:highline-fi-payment-requests-api
+  name: Highline Payment Requests API
+  description: The Payment Requests API from Highline — 4 operation(s) for payment requests.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Payment Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/highline-fi-payment-requests-api-openapi.yml
+- aid: highline-fi:highline-fi-payments-api
+  name: Highline Payments API
+  description: The Payments API from Highline — 3 operation(s) for payments.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/highline-fi-payments-api-openapi.yml
+- aid: highline-fi:highline-fi-products-api
+  name: Highline Products API
+  description: The Products API from Highline — 4 operation(s) for products.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Products
+  properties:
+  - type: OpenAPI
+    url: openapi/highline-fi-products-api-openapi.yml
+- aid: highline-fi:highline-fi-settlements-api
+  name: Highline Settlements API
+  description: The Settlements API from Highline — 3 operation(s) for settlements.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Settlements
+  properties:
+  - type: OpenAPI
+    url: openapi/highline-fi-settlements-api-openapi.yml
+- aid: highline-fi:highline-fi-users-api
+  name: Highline Users API
+  description: The Users API from Highline — 4 operation(s) for users.
+  humanURL: https://docs.highline.co/
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/highline-fi-users-api-openapi.yml
 common:
   - type: AgenticAccess
     url: agentic-access/highline-fi-agentic-access.yml
