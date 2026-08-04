@@ -1,0 +1,30 @@
+{
+  "provider": "highline-fi",
+  "sources": [
+    "highline-fi-auth-api-openapi.yml",
+    "highline-fi-companies-api-openapi.yml",
+    "highline-fi-connections-api-openapi.yml",
+    "highline-fi-employments-api-openapi.yml",
+    "highline-fi-payment-requests-api-openapi.yml",
+    "highline-fi-payments-api-openapi.yml",
+    "highline-fi-products-api-openapi.yml",
+    "highline-fi-settlements-api-openapi.yml",
+    "highline-fi-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "highline-fi-auth-api-openapi.yml",
+    "highline-fi-companies-api-openapi.yml",
+    "highline-fi-connections-api-openapi.yml",
+    "highline-fi-employments-api-openapi.yml",
+    "highline-fi-payment-requests-api-openapi.yml",
+    "highline-fi-payments-api-openapi.yml",
+    "highline-fi-products-api-openapi.yml",
+    "highline-fi-settlements-api-openapi.yml",
+    "highline-fi-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
