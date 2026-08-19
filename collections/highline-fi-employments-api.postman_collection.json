@@ -1,0 +1,106 @@
+{
+  "item": [
+    {
+      "id": "159c7e74-d1e8-49d9-a6ee-614be10a0836",
+      "name": "Employments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "defa0cee-e661-4aae-9e4f-76a16164ddd6",
+          "name": "List Employments",
+          "request": {
+            "name": "List Employments",
+            "description": {},
+            "url": {
+              "path": [
+                "employments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "49faa770-4265-4b6f-90e8-d6740e8af5c3",
+              "name": "OK",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "employments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.highline.co",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "2f37908c-5fc8-4e36-8102-d9d9843c5cbf",
+    "name": "Highline Auth Employments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Highline is a payment solution enabling direct paycheck deductions\n(pay-by-paycheck). This OpenAPI definition is generated best-effort\nfrom public docs at https://docs.highline.co/.\n\n\nContact Support:\n Name: Highline",
+      "type": "text/plain"
+    }
+  }
+}

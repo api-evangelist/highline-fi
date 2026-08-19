@@ -1,0 +1,86 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Highline Auth Users API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Users",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get A User",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/users/:user-id",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get A User"
+        },
+        {
+          "info": {
+            "name": "Check User Eligibility",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/users/match",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Check User Eligibility"
+        },
+        {
+          "info": {
+            "name": "Simulate a new user identity (sandbox)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/users/simulate-identity"
+          },
+          "docs": "Simulate a new user identity (sandbox)"
+        },
+        {
+          "info": {
+            "name": "Simulate Receiving Payroll Deposit (sandbox)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/users/:user-id/simulate-incoming-transfer",
+            "params": [
+              {
+                "name": "user-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Simulate Receiving Payroll Deposit (sandbox)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

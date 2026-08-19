@@ -1,0 +1,41 @@
+# Highline Documentation
+
+> Documentation for Highline
+
+## Guides
+- [Connect User to Highline](https://highline.readme.io/docs/connect-user-to-highline.md)
+- [Update or Cancel Payment Request](https://highline.readme.io/docs/update-payment-request.md)
+- [Monitoring Payment](https://highline.readme.io/docs/monitor-payments.md)
+- [Verify Webhooks](https://highline.readme.io/docs/verify-webhooks.md)
+
+## API Reference
+- [Create Access Token](https://highline.readme.io/reference/post_auth-token.md): This endpoint returns an access token that can be used to authenticate requests to the API.      This endpoint takes one of three request bodies:  ```` {   "api_key": "API_KEY",   "secret": "SECRET" } ````  ```` {   "email": "user@example.com",   "password": "notasecret"   "device": "browser-session123-example" } ````  The **api_key** and **secret** are available in the product settings page at https://app.highline.co/manage-product.  Your API keys carry many privileges, so be sure to keep them secure!   The **email** and **password** are the credentials for a user in the product.  The **device** is a string that identifies the device that is requesting the token.  The **subject** is the subject we returned in the response when the token was issued.   The **mfa_required** is a string that indicates the type of MFA that is required to complete the authentication process,  when no MFA was defined (default) this field would be empty, meaning that you don't need to worry about it.  Do not share your secret API keys in publicly accessible areas such as GitHub, company-side code, and so forth.
+- [Refresh Access Token](https://highline.readme.io/reference/post_auth-refresh-token.md): This endpoint returns a new token based on the current access token, that can be used to authenticate requests to the API.  You need to pass your current access_token in bearer authorization header.      This endpoint uses the same request, but vary the content depending of the access type.  For an API KEY refresh:   ```` {   "subject": "PRODUCT_ID", } ````  For an User refresh:   ```` {   "subject": "USER_ID", } ````  The **product_id** is available in the product settings page at https://app.highline.co/manage-product.   This endpoint is designed to extend the expiration time of your access. If your access_token is currently expired, you need to login again using POST auth/token.  Do not share your secret API keys information in publicly accessible areas such as GitHub, company-side code, and so forth.
+- [Check User Eligibility](https://highline.readme.io/reference/post_users-match.md): This endpoint returns the capabilities that exist for a potential user.  The user is identified using the information provided in the body of the request.  If the user exists, an **applicant_token** is returned.
+- [List Connections](https://highline.readme.io/reference/get_connections.md): List connections. Filter by connection_id, product_id, user_id, status.
+- [Get a Connection](https://highline.readme.io/reference/get_connections-connection-id.md): Get a connection by ID
+- [Remove a Connection](https://highline.readme.io/reference/delete_connections-connection-id.md): Remove a connection by ID
+- [Create Payment Requests](https://highline.readme.io/reference/post_connections-connection-id-payment-requests.md): Create a list of payment requests for a connection.
+- [List Payment Requests](https://highline.readme.io/reference/get_payment-requests.md): List payment requests. Filter by connection_id, product_id, user_id.
+- [Get a Payment Request](https://highline.readme.io/reference/get_payment-requests-payment-request-id.md): Get a payment request by id.
+- [Update a Payment Request](https://highline.readme.io/reference/put_payment-requests-payment-request-id.md): Update a payment request by id.
+- [Cancel a Payment Request](https://highline.readme.io/reference/delete_payment-requests-payment-request-id.md): Cancel a payment request by id.
+- [List Payments for a Payment Request](https://highline.readme.io/reference/get_payment-requests-payment-request-id-payments.md): List payments for a payment request.
+- [List Payments](https://highline.readme.io/reference/get_payments.md): List Payments. Filter by status, start_date, end_date, user_id, product_id, connection_id, settlement_id.
+- [Get a Payment](https://highline.readme.io/reference/get_payments-payment-id.md): Get a payment by id.
+- [Get a Company](https://highline.readme.io/reference/get_companies-company-id.md): Get a company by ID
+- [List Products](https://highline.readme.io/reference/get_products-1.md): List products
+- [Get a Product](https://highline.readme.io/reference/get_products-product-id-1.md): Get a product by ID
+- [Get a Product's members](https://highline.readme.io/reference/get_products-product-id-members.md): Get members of a product by ID
+- [List Employments](https://highline.readme.io/reference/get_employments.md): Gets a list of employments.  If no parameters are provided, returns the employments that you have permission to view.  If the user_id or employment_id parametes are present, then the resulting employments will be filtered by the provided parameters.
+- [Get A User](https://highline.readme.io/reference/get_users-user-id.md): Returns a user by ID.
+- [List Settlements](https://highline.readme.io/reference/get_settlements-1.md): List settlements. Filter by settlement_id, product_id, custodian_id.
+- [Get a Settlement](https://highline.readme.io/reference/get_settlements-settlement-id.md): Get a Settlement by ID.
+- [Get a Report for a Settlement](https://highline.readme.io/reference/get_settlements-settlement-id-report-1.md): Get a Settlements Report. Format can be csv or json. If no format is provided, it will default to json.
+- [Simulate a new user identity](https://highline.readme.io/reference/post_users-simulate-identity.md): Simulate a new user identity and generate a new SSN that can be used for applicant matching and enrollment process.
+- [Simulate Receiving Payroll Deposit for a User](https://highline.readme.io/reference/post_users-user-id-simulate-incoming-transfer.md): Simulate a payroll deposit for a given user ID. This is useful for testing payroll deposit flows. As part of the simulation, the incoming transfer will be processed and may generate payments or adjustments.
+- [Simulate due date arrival for a given payment request](https://highline.readme.io/reference/post_payment-requests-payment-request-id-simulate-due-date.md): Simulate due date arrival for a given payment request. This is useful for testing Highline's payments processor, As depending on the settlement schedule, and the collected payments, the payment request will reach its final state.
+- [Simulate settling all payments associated with a product_id](https://highline.readme.io/reference/post_products-product-id-simulate-settlement.md): Simulate due date arrival for a given payment request. This is useful for testing Highline's payments processor, As part of the simulation, the pending payments will be summarized into one settlement, and the lum sum of the settlement will be settled.
+
+## Changelog
+- [Release Notes](https://highline.readme.io/changelog/release-notes.md)

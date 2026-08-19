@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Highline Auth Settlements API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Settlements",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Settlements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/settlements"
+          },
+          "docs": "List Settlements"
+        },
+        {
+          "info": {
+            "name": "Get a Settlement",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/settlements/:settlement-id",
+            "params": [
+              {
+                "name": "settlement-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Settlement"
+        },
+        {
+          "info": {
+            "name": "Get Settlement Report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/settlements/:settlement-id/report",
+            "params": [
+              {
+                "name": "settlement-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get Settlement Report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

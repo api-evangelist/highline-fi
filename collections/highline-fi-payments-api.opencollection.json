@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Highline Auth Payments API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payments"
+          },
+          "docs": "List Payments"
+        },
+        {
+          "info": {
+            "name": "Get a Payment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payments/:payment-id",
+            "params": [
+              {
+                "name": "payment-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Payment"
+        },
+        {
+          "info": {
+            "name": "List Payments for Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id/payments",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "List Payments for Request"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

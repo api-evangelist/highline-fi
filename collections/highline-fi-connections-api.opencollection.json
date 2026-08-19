@@ -1,0 +1,71 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Highline Auth Connections API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Connections",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Connections",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/connections"
+          },
+          "docs": "List Connections"
+        },
+        {
+          "info": {
+            "name": "Get a Connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/connections/:connection-id",
+            "params": [
+              {
+                "name": "connection-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Connection"
+        },
+        {
+          "info": {
+            "name": "Remove a Connection",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.highline.co/connections/:connection-id",
+            "params": [
+              {
+                "name": "connection-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Remove a Connection"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

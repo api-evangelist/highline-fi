@@ -1,0 +1,133 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Highline Auth Payment Requests API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payment Requests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Payment Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payment-requests"
+          },
+          "docs": "List Payment Requests"
+        },
+        {
+          "info": {
+            "name": "Get a Payment Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Get a Payment Request"
+        },
+        {
+          "info": {
+            "name": "Update a Payment Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a Payment Request"
+        },
+        {
+          "info": {
+            "name": "Cancel a Payment Request",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a Payment Request"
+        },
+        {
+          "info": {
+            "name": "Create Payment Requests",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/connections/:connection-id/payment-requests",
+            "params": [
+              {
+                "name": "connection-id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create Payment Requests"
+        },
+        {
+          "info": {
+            "name": "Simulate Due Date (sandbox)",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.highline.co/payment-requests/:payment-request-id/simulate-due-date",
+            "params": [
+              {
+                "name": "payment-request-id",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Simulate Due Date (sandbox)"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
