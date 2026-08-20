@@ -37,6 +37,17 @@ tags:
   - Lending
   - Direct Deposit
   - API-First
+  - Webhook
+  - Pay by Paycheck
+tags_raw:
+  - Embedded Finance
+  - Payroll
+  - Payments
+  - ACH
+  - Bill Pay
+  - Lending
+  - Direct Deposit
+  - API-First
   - Webhooks
   - Pay by Paycheck
 url: https://raw.githubusercontent.com/api-evangelist/highline-fi/refs/heads/main/apis.yml
@@ -60,6 +71,13 @@ apis:
     agents.
   humanURL: https://docs.highline.co/
   tags:
+  - Payments
+  - Eligibility
+  - Link
+  - Webhook
+  - Settlement
+  - Reconciliation
+  tags_raw:
   - Payments
   - Eligibility
   - Link
@@ -131,6 +149,8 @@ apis:
   description: The Auth API from Highline — 2 operation(s) for auth.
   humanURL: https://docs.highline.co/
   tags:
+  - Authentication
+  tags_raw:
   - Auth
   properties:
   - type: OpenAPI
@@ -185,6 +205,8 @@ apis:
   description: The Products API from Highline — 4 operation(s) for products.
   humanURL: https://docs.highline.co/
   tags:
+  - Product
+  tags_raw:
   - Products
   properties:
   - type: OpenAPI
@@ -194,6 +216,8 @@ apis:
   description: The Settlements API from Highline — 3 operation(s) for settlements.
   humanURL: https://docs.highline.co/
   tags:
+  - Settlement
+  tags_raw:
   - Settlements
   properties:
   - type: OpenAPI
@@ -203,6 +227,8 @@ apis:
   description: The Users API from Highline — 4 operation(s) for users.
   humanURL: https://docs.highline.co/
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
