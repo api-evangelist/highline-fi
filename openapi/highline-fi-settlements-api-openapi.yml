@@ -1,13 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Highline Auth Settlements API
+  title: Highline Settlements API
   description: 'Highline is a payment solution enabling direct paycheck deductions
 
     (pay-by-paycheck). This OpenAPI definition is generated best-effort
 
-    from public docs at https://docs.highline.co/.
-
-    '
+    from public docs at https://docs.highline.co/.'
   version: 1.0.0
   contact:
     name: Highline
@@ -30,6 +28,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getSettlements
+      x-operation-id-source: derived
   /settlements/{settlement-id}:
     get:
       tags:
@@ -40,6 +40,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getSettlementsBySettlementId
+      x-operation-id-source: derived
   /settlements/{settlement-id}/report:
     get:
       tags:
@@ -50,6 +52,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: getSettlementsBySettlementIdReport
+      x-operation-id-source: derived
 components:
   parameters:
     SettlementId:

@@ -1,13 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Highline Auth Users API
+  title: Highline Users API
   description: 'Highline is a payment solution enabling direct paycheck deductions
 
     (pay-by-paycheck). This OpenAPI definition is generated best-effort
 
-    from public docs at https://docs.highline.co/.
-
-    '
+    from public docs at https://docs.highline.co/.'
   version: 1.0.0
   contact:
     name: Highline
@@ -36,6 +34,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/User'
+      operationId: getUsersByUserId
+      x-operation-id-source: derived
   /users/match:
     post:
       tags:
@@ -59,6 +59,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postUsersMatch
+      x-operation-id-source: derived
   /users/simulate-identity:
     post:
       tags:
@@ -67,6 +69,8 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postUsersSimulateIdentity
+      x-operation-id-source: derived
   /users/{user-id}/simulate-incoming-transfer:
     post:
       tags:
@@ -77,14 +81,9 @@ paths:
       responses:
         '200':
           description: OK
+      operationId: postUsersByUserIdSimulateIncomingTransfer
+      x-operation-id-source: derived
 components:
-  parameters:
-    UserId:
-      name: user-id
-      in: path
-      required: true
-      schema:
-        type: string
   schemas:
     User:
       type: object
@@ -97,6 +96,13 @@ components:
           type: string
         last_name:
           type: string
+  parameters:
+    UserId:
+      name: user-id
+      in: path
+      required: true
+      schema:
+        type: string
   securitySchemes:
     bearerAuth:
       type: http

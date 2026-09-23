@@ -1,15 +1,7 @@
 {
   "provider": "highline-fi",
   "sources": [
-    "highline-fi-auth-api-openapi.yml",
-    "highline-fi-companies-api-openapi.yml",
-    "highline-fi-connections-api-openapi.yml",
-    "highline-fi-employments-api-openapi.yml",
-    "highline-fi-payment-requests-api-openapi.yml",
-    "highline-fi-payments-api-openapi.yml",
-    "highline-fi-products-api-openapi.yml",
-    "highline-fi-settlements-api-openapi.yml",
-    "highline-fi-users-api-openapi.yml"
+    "_original/highline-fi-openapi.yml"
   ],
   "outputs": [
     "highline-fi-auth-api-openapi.yml",
@@ -25,6 +17,20 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "highline-fi-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "highline-fi-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "highline-fi-companies-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "highline-fi-connections-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "highline-fi-employments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "highline-fi-payment-requests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "highline-fi-payments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "highline-fi-products-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "highline-fi-settlements-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "highline-fi-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
