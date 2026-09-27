@@ -101,6 +101,19 @@ paths:
       operationId: postPaymentRequestsByPaymentRequestIdSimulateDueDate
       x-operation-id-source: derived
 components:
+  parameters:
+    PaymentRequestId:
+      name: payment-request-id
+      in: path
+      required: true
+      schema:
+        type: string
+    ConnectionId:
+      name: connection-id
+      in: path
+      required: true
+      schema:
+        type: string
   schemas:
     PaymentRequest:
       type: object
@@ -119,19 +132,6 @@ components:
         due_date:
           type: string
           format: date
-  parameters:
-    ConnectionId:
-      name: connection-id
-      in: path
-      required: true
-      schema:
-        type: string
-    PaymentRequestId:
-      name: payment-request-id
-      in: path
-      required: true
-      schema:
-        type: string
   securitySchemes:
     bearerAuth:
       type: http
