@@ -1,4 +1,4 @@
-# Highline (highline-fi)
+# Highline
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,90 +64,134 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Highline is an embedded payment infrastructure company whose Pay by Paycheck
-product captures funds from a consumer's payroll before they reach the
-checking account and routes them to billers and lenders. The platform pairs
-with payroll providers to create a split direct deposit at payroll run time,
-so designated bills are paid on time and in full, and the remainder is
-deposited to the consumer's bank as normal. Highline ships an API-first
-developer experience with hosted documentation at docs.highline.co, a Highline
-Link client widget, webhook-based notifications, sandbox simulations, daily
-ACH settlements, and an llms.txt for AI agents. The company is sometimes
-referenced as highline.fi but operates today at highline.co.
+Highline is an embedded payment infrastructure company whose Pay by Paycheck product captures funds from a consumer's payroll before they reach the checking account and routes them to billers and lenders. The platform pairs with payroll providers to create a split direct deposit at payroll run time, so designated bills are paid on time and in full, and the remainder is deposited to the consumer's bank as normal. Highline ships an API-first developer experience with hosted documentation at docs.highline.co, a Highline Link client widget, webhook-based notifications, sandbox simulations, daily ACH settlements, and an llms.txt for AI agents. The company is sometimes referenced as highline.fi but operates today at highline.co.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/highline-fi/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/highline-fi/refs/heads/main/apis.yml)
+**Areas:** Embedded Finance · Payroll · Payments · ACH · Bill Pay · Lending · Direct Deposit · API-First · Webhook · Pay by Paycheck
 
-## Scope
+## Highline on APIs.io
 
-- **Type:** Index
-- **Position:** Provider
-- **Access:** 3rd-Party
+Everything profiled for Highline is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/highline-fi/](https://apis.io/providers/highline-fi/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (10)
 
-- Embedded Finance
-- Payroll
-- Payments
-- ACH
-- Bill Pay
-- Lending
-- Direct Deposit
-- API-First
-- Webhooks
-- Pay by Paycheck
+- [Highline Pay by Paycheck API](https://apis.io/apis/highline-fi/pay-by-paycheck-api/) — The Highline API lets billers, lenders, and platforms verify consumer eligibility for paycheck-deduction payments, present the Highline Link flow to…
+- [Highline Auth API](https://apis.io/apis/highline-fi/highline-fi-auth-api/) — The Auth API from Highline — 2 operation(s) for auth.
+- [Highline Companies API](https://apis.io/apis/highline-fi/highline-fi-companies-api/) — The Companies API from Highline — 1 operation(s) for companies.
+- [Highline Connections API](https://apis.io/apis/highline-fi/highline-fi-connections-api/) — The Connections API from Highline — 2 operation(s) for connections.
+- [Highline Employments API](https://apis.io/apis/highline-fi/highline-fi-employments-api/) — The Employments API from Highline — 1 operation(s) for employments.
+- [Highline Payment Requests API](https://apis.io/apis/highline-fi/highline-fi-payment-requests-api/) — The Payment Requests API from Highline — 4 operation(s) for payment requests.
+- [Highline Payments API](https://apis.io/apis/highline-fi/highline-fi-payments-api/) — The Payments API from Highline — 3 operation(s) for payments.
+- [Highline Products API](https://apis.io/apis/highline-fi/highline-fi-products-api/) — The Products API from Highline — 4 operation(s) for products.
+- [Highline Settlements API](https://apis.io/apis/highline-fi/highline-fi-settlements-api/) — The Settlements API from Highline — 3 operation(s) for settlements.
+- [Highline Users API](https://apis.io/apis/highline-fi/highline-fi-users-api/) — The Users API from Highline — 4 operation(s) for users.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-23
-- **Modified:** 2026-05-23
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Highline Pay by Paycheck API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-The Highline API lets billers, lenders, and platforms verify consumer
-eligibility for paycheck-deduction payments, present the Highline Link
-flow to authorize a connection, submit and manage payment requests, and
-reconcile daily ACH settlements. It is documented at docs.highline.co
-with API keys, webhooks, simulations, and an llms.txt index for AI
-agents.
+- [Highline Fi Agentic Access](https://apis.io/agentic-access/highline-fi/highline-fi-agentic-access/)
 
-- **Human URL:** [https://docs.highline.co/](https://docs.highline.co/)
+#### Collections (10)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Payments
-- Eligibility
-- Link
-- Webhooks
-- Settlements
-- Reconciliation
+- [Highline API](https://apis.io/collections/highline-fi/open-highline-fi/)
+- [Highline Auth API](https://apis.io/collections/highline-fi/open-highline-fi-auth-api/)
+- [Highline Auth Companies API](https://apis.io/collections/highline-fi/open-highline-fi-companies-api/)
+- [Highline Auth Connections API](https://apis.io/collections/highline-fi/open-highline-fi-connections-api/)
+- [Highline Auth Employments API](https://apis.io/collections/highline-fi/open-highline-fi-employments-api/)
+- [Highline Auth Payment Requests API](https://apis.io/collections/highline-fi/open-highline-fi-payment-requests-api/)
+- [Highline Auth Payments API](https://apis.io/collections/highline-fi/open-highline-fi-payments-api/)
+- [Highline Auth Products API](https://apis.io/collections/highline-fi/open-highline-fi-products-api/)
+- [Highline Auth Settlements API](https://apis.io/collections/highline-fi/open-highline-fi-settlements-api/)
+- [Highline Auth Users API](https://apis.io/collections/highline-fi/open-highline-fi-users-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://docs.highline.co/)
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Highline Fi Authentication](https://apis.io/security/highline-fi/highline-fi-authentication/)
+- [Highline Fi Domain Security](https://apis.io/security/highline-fi/highline-fi-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Highline Fi Plans Pricing](https://apis.io/plans/highline-fi/highline-fi-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Highline Fi Rate Limits](https://apis.io/rate-limits/highline-fi/highline-fi-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Highline Fi Finops](https://apis.io/finops/highline-fi/highline-fi-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://highline.co/)
-- [Payroll](https://highline.co/payroll/)
-- [Payroll And H R](https://highline.co/for-payroll-and-hr-providers/)
-- [L L Ms Txt](https://docs.highline.co/llms.txt)
-- [LinkedIn](https://www.linkedin.com/company/highlineco/)
-- [Postman Collection](collections/highline-fi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/highline-fi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-
-## Common Properties
-
-- [Website](https://highline.co/)
-- [Payroll](https://highline.co/payroll/)
-- [Payroll And H R](https://highline.co/for-payroll-and-hr-providers/)
 - [Documentation](https://docs.highline.co/)
-- [L L Ms Txt](https://docs.highline.co/llms.txt)
-- [About](https://highline.co/about/)
-- [Careers](https://highline.co/careers/)
-- [Contact](https://highline.co/contact/)
-- [LinkedIn](https://www.linkedin.com/company/highlineco/)
-- [Crunchbase](https://www.crunchbase.com/organization/HighlineCo)
+- [Blog](https://highline.co/feed/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 21.3** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 64.3 |
+| Contract quality | 45.4 |
+| Contract governance | 0.0 |
+| Operational transparency | 5.3 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 5.3 |
+
+**Agent readiness 22.1** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.7** — Payments
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/highline-fi/](https://apis.io/providers/highline-fi/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Highline: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/highline-fi/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
